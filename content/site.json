@@ -1,0 +1,77 @@
+{
+  "siteTitle": "Meander",
+  "metaDescription": "Meander — tactile tufted rugs and wall objects by Kasia, an artist from Poland.",
+  "hero": {
+    "image": "/images/colorful-tufted-hero.png",
+    "imageAlt": "Colorful abstract artwork",
+    "buttonText": "shop now",
+    "buttonLink": "#shop"
+  },
+  "shop": {
+    "photoImage": "/images/pink-sculptural-rug-studio.png",
+    "photoAlt": "Pink sculptural rug on a wooden studio floor",
+    "photoButtonText": "shop now",
+    "photoButtonLink": "#contact",
+    "featuredImage": "/images/aqua-tufted-wall-rug.png",
+    "featuredImageAlt": "Aqua Medousa tufted wall rug",
+    "featuredTitle": "Medousa",
+    "featuredDimensions": "90 x 90 cm",
+    "featuredButtonText": "shop now",
+    "featuredButtonLink": "#contact",
+    "secondaryTitle": "Uvula",
+    "secondaryDimensions": "90 x 90 cm"
+  },
+  "about": {
+    "paragraphOne": "Meander rugs is a small company from Poland. To produce my rugs I use sheep wool which makes them more sustainable. Every rug has hangers on their back to easily hang them on the wall.",
+    "paragraphTwo": "The idea of Meander is to add some joy into every interior by color, shape and textures.",
+    "roomImage": "/images/meander-rugs-living-room.png",
+    "roomImageAlt": "Colorful wool wall pieces above a sofa in a bright living room"
+  },
+  "gallery": [
+    {
+      "title": "Green tufted wall art",
+      "image": "/images/green-tufted-wall-rug.png",
+      "imageAlt": "Green abstract tufted wall art",
+      "link": ""
+    },
+    {
+      "title": "Blue and red tufted rugs",
+      "image": "/images/blue-and-red-tufted-rugs.png",
+      "imageAlt": "Blue and red abstract tufted wall art",
+      "link": ""
+    },
+    {
+      "title": "Purple tufted wall rug",
+      "image": "/images/purple-tufted-wall-rug.png",
+      "imageAlt": "Purple abstract tufted wall art",
+      "link": ""
+    }
+  ],
+  "artist": {
+    "portrait": "/images/kasiunia.jpg",
+    "portraitAlt": "Kasiunia standing beside her tufted wall art",
+    "intro": "My name is Kasia and I’m an artist from Poland.",
+    "previousProjectText": "@siupstudio",
+    "previousProjectLink": "https://www.instagram.com/siupstudio/",
+    "biography": "I started my tufting journey about a year ago and I immediately fell in love with the technique.",
+    "extraText": "blabla bla kicia kicia"
+  },
+  "videos": [
+    {
+      "enabled": true,
+      "title": "Moving image",
+      "description": "A film from the Meander collection.",
+      "url": "https://www.youtube.com/watch?v=Fem-cIuNMwY&list=PLSIQsDBrBKOY"
+    },
+    {
+      "enabled": true,
+      "title": "Studio film",
+      "description": "A closer look at the process and the work.",
+      "url": "https://drive.google.com/file/d/1_4AiI3BD3RdItzgU_ddGaTnauUqwsjOY/view?usp=sharing"
+    }
+  ],
+  "contact": {
+    "email": "kasia@siup.studio",
+    "phone": "+48 882 735 640"
+  }
+}

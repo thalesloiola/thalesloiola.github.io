@@ -31,6 +31,7 @@
     .feature-item { display:flex; align-items:flex-end; gap:10px; }
     .feature-item img { width:min(35vw,205px); border-radius:2px; mix-blend-mode:screen; }
     .feature-copy { font-size:11px; line-height:1.35; padding-bottom:3px; }
+    .secondary-product { position:absolute; bottom:12px; left:12px; }
     .feature-buy { position:absolute; bottom:14%; left:50%; transform:translateX(-50%); }
     .about-room { display:grid; grid-template-columns:32% 68%; min-height:540px; }
     .about-copy { background:var(--sage); padding:50px clamp(24px,4vw,70px); display:flex; flex-direction:column; justify-content:center; font-size:clamp(13px,1.25vw,17px); line-height:1.45; color:#7973a1; }
@@ -38,14 +39,15 @@
     .about-copy p:last-child { margin-bottom:0; }
     .about-room figure { margin:0; min-height:540px; }
     .about-room figure img { width:100%; height:100%; object-fit:cover; }
-    .objects { min-height:360px; display:flex; justify-content:center; align-items:center; gap:clamp(28px,6vw,90px); padding:54px 8%; }
-    .object-card { width:clamp(105px,15vw,190px); aspect-ratio:1; border-radius:25px; display:grid; place-items:center; background:#f1f0ee; }
+    .objects { min-height:360px; display:flex; justify-content:center; align-items:center; gap:clamp(28px,6vw,90px); padding:54px 8%; flex-wrap:wrap; }
+    .object-card { width:clamp(105px,15vw,190px); aspect-ratio:1; border-radius:25px; display:grid; place-items:center; background:#f1f0ee; overflow:hidden; }
     .object-card:nth-child(2) { width:clamp(150px,23vw,270px); background:#efeeee; }
     .object-card img { width:82%; height:82%; object-fit:contain; }
+    .object-card a { display:grid; place-items:center; width:100%; height:100%; }
+    .object-card figcaption { width:100%; padding:0 10px 12px; text-align:center; color:#7973a1; font-size:12px; }
     .artist { display:grid; grid-template-columns:40% 60%; min-height:500px; }
     .artist-photo { min-height:500px; background:linear-gradient(155deg,#e6dfea,#f5f4f1); display:grid; place-items:center; overflow:hidden; }
     .artist-photo img { width:100%; height:100%; object-fit:cover; }
-    .artist-placeholder { padding:36px; text-align:center; color:#817a9c; font-size:13px; line-height:1.5; }
     .artist-copy { padding:clamp(34px,7vw,100px); display:flex; flex-direction:column; justify-content:center; line-height:1.6; font-size:clamp(15px,1.45vw,19px); }
     .artist-copy p { max-width:580px; margin:0 0 16px; }
     .artist-copy a { text-decoration-thickness:1px; text-underline-offset:3px; }
@@ -59,6 +61,7 @@
     .contact h2 { margin:0 0 28px; font-size:12px; font-weight:500; letter-spacing:.04em; }
     .contact p { margin:4px; font-size:13px; }
     .contact a { text-decoration:none; }
+    .loading-message { padding:4rem 1.5rem; text-align:center; }
     @media (max-width:700px) {
       .hero { height:86vw; min-height:390px; }
       .nav { gap:14px; padding:17px 14px; font-size:11px; }
@@ -80,76 +83,10 @@
     }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
   </style>
+  <script src="js/site.js" defer></script>
 </head>
 <body>
-  <header class="hero" id="top">
-    <img class="hero-art" src="images/colorful-tufted-hero.png" alt="Colorful abstract artwork">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#top">Meander</a>
-      <a href="#shop">shop</a><a href="#about">about</a><a href="#bio">bio</a><a href="#contact">contact</a><a href="#faq">FAQ</a>
-    </nav>
-    <a class="pill" href="#shop">shop now <span aria-hidden="true">→</span></a>
-  </header>
-
-  <main>
-    <section class="products" id="shop" aria-label="Featured rugs">
-      <article class="product-photo">
-        <img src="images/pink-sculptural-rug-studio.png" alt="Pink sculptural rug on a wooden studio floor">
-        <a class="pill" href="#contact">shop now</a>
-      </article>
-      <article class="product-feature">
-        <div class="feature-item">
-          <img src="images/aqua-tufted-wall-rug.png" alt="Aqua Medousa tufted wall rug">
-          <div class="feature-copy">Medousa<br>90 x 90 cm</div>
-        </div>
-        <a class="pill feature-buy" href="#contact">shop now</a>
-        <div class="feature-copy" style="position:absolute;bottom:12px;left:12px">Uvula<br>90 x 90 cm</div>
-      </article>
-    </section>
-
-    <section class="about-room" id="about">
-      <div class="about-copy">
-        <p><strong>Meander rugs</strong> is a small company from Poland.<br>To produce my rugs I use sheep wool which makes them more sustainable. Every rug has hangers on their back to easily hang them on the wall.</p>
-        <p>The idea of Meander is to add some joy into every interior by color, shape and textures.</p>
-      </div>
-      <figure><img src="images/meander-rugs-living-room.png" alt="Colorful wool wall pieces above a sofa in a bright living room"></figure>
-    </section>
-
-    <section class="objects" aria-label="Tufted wall art details">
-      <div class="object-card"><img src="images/green-tufted-wall-rug.png" alt="Green abstract tufted wall art"></div>
-      <div class="object-card"><img src="images/blue-and-red-tufted-rugs.png" alt="Blue and red abstract tufted wall art"></div>
-      <div class="object-card"><img src="images/purple-tufted-wall-rug.png" alt="Purple abstract tufted wall art"></div>
-    </section>
-
-    <section class="artist" id="bio">
-      <div class="artist-photo"><img src="images/kasiunia.jpg" alt="Kasiunia standing beside her tufted wall art"></div>
-      <div class="artist-copy">
-        <p>My name is Kasia and I’m an artist from Poland.</p>
-        <p>You may know me from my earlier project <a href="https://www.instagram.com/siupstudio/">@siupstudio</a></p>
-        <p>I started my tufting journey about a year ago and I immediately fell in love with the technique.</p>
-        <p>blabla bla kicia kicia</p>
-      </div>
-    </section>
-
-    <section class="video-section" aria-labelledby="video-one-title">
-      <h2 class="video-heading" id="video-one-title">Moving image</h2>
-      <p class="video-intro">A film from the Meander collection.</p>
-      <div class="video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/Fem-cIuNMwY" title="Meander video on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section class="video-section" aria-labelledby="video-two-title">
-      <h2 class="video-heading" id="video-two-title">Studio film</h2>
-      <p class="video-intro">A closer look at the process and the work.</p>
-      <div class="video-frame">
-        <iframe src="https://drive.google.com/file/d/1_4AiI3BD3RdItzgU_ddGaTnauUqwsjOY/preview" title="Meander studio video on Google Drive" loading="lazy" allow="autoplay" allowfullscreen></iframe>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <div class="contact"><h2>CONTACT</h2><p><a href="mailto:kasia@siup.studio">kasia@siup.studio</a></p><p><a href="tel:+48882735640">+48 882 735 640</a></p></div>
-  </footer>
+  <div id="site-root"><p class="loading-message">Loading the site…</p></div>
+  <noscript>This site needs JavaScript enabled to display its content.</noscript>
 </body>
 </html>

@@ -1,0 +1,195 @@
+media:
+  - name: images
+    label: Site images
+    input: images
+    output: /images
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+    categories: [image]
+
+content:
+  - name: site
+    label: Site content
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: siteTitle
+        label: Site name
+        type: string
+        required: true
+      - name: metaDescription
+        label: Search description
+        type: text
+      - name: hero
+        label: Home section
+        type: object
+        fields:
+          - name: image
+            label: Main image
+            type: image
+            options:
+              media: images
+              path: images
+          - name: imageAlt
+            label: Main image description
+            type: string
+            description: Briefly describe the image for visitors using screen readers.
+          - name: buttonText
+            label: Button text
+            type: string
+          - name: buttonLink
+            label: Button link
+            type: string
+            description: Use a section link such as #shop or a full web address.
+      - name: shop
+        label: Featured work
+        type: object
+        fields:
+          - name: photoImage
+            label: Pink rug photo
+            type: image
+            options:
+              media: images
+              path: images
+          - name: photoAlt
+            label: Pink rug image description
+            type: string
+          - name: photoButtonText
+            label: Pink rug button text
+            type: string
+          - name: photoButtonLink
+            label: Pink rug button link
+            type: string
+          - name: featuredImage
+            label: Featured product image
+            type: image
+            options:
+              media: images
+              path: images
+          - name: featuredImageAlt
+            label: Featured product image description
+            type: string
+          - name: featuredTitle
+            label: Featured product name
+            type: string
+          - name: featuredDimensions
+            label: Featured product size
+            type: string
+          - name: featuredButtonText
+            label: Featured product button text
+            type: string
+          - name: featuredButtonLink
+            label: Featured product button link
+            type: string
+          - name: secondaryTitle
+            label: Second product name
+            type: string
+          - name: secondaryDimensions
+            label: Second product size
+            type: string
+      - name: about
+        label: About section
+        type: object
+        fields:
+          - name: paragraphOne
+            label: First paragraph
+            type: text
+          - name: paragraphTwo
+            label: Second paragraph
+            type: text
+          - name: roomImage
+            label: Room photo
+            type: image
+            options:
+              media: images
+              path: images
+          - name: roomImageAlt
+            label: Room photo description
+            type: string
+      - name: gallery
+        label: Art gallery
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Project title
+            type: string
+          - name: image
+            label: Project image
+            type: image
+            options:
+              media: images
+              path: images
+          - name: imageAlt
+            label: Project image description
+            type: string
+          - name: link
+            label: Project link (optional)
+            type: string
+            description: Leave blank if the image should not link anywhere.
+      - name: artist
+        label: Artist bio
+        type: object
+        fields:
+          - name: portrait
+            label: Portrait
+            type: image
+            options:
+              media: images
+              path: images
+          - name: portraitAlt
+            label: Portrait description
+            type: string
+          - name: intro
+            label: Introduction
+            type: text
+          - name: previousProjectText
+            label: Previous project link text
+            type: string
+          - name: previousProjectLink
+            label: Previous project URL
+            type: string
+          - name: biography
+            label: Biography
+            type: text
+          - name: extraText
+            label: Additional text
+            type: text
+      - name: videos
+        label: Video sections
+        type: object
+        list: true
+        fields:
+          - name: enabled
+            label: Show this video
+            type: boolean
+          - name: title
+            label: Video title
+            type: string
+          - name: description
+            label: Short description
+            type: text
+          - name: url
+            label: YouTube or Google Drive link
+            type: string
+            description: Paste the regular share link. The site creates the embedded player.
+      - name: contact
+        label: Contact details
+        type: object
+        fields:
+          - name: email
+            label: Email address
+            type: string
+          - name: phone
+            label: Phone number
+            type: string
+
+settings:
+  commit:
+    identity: user
+    templates:
+      create: "content: add {path}"
+      update: "content: update {path}"
+      delete: "content: remove {path}"
+      rename: "content: rename {oldPath} to {newPath}"
