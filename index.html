@@ -16,12 +16,10 @@
     body { margin:0; background:var(--paper); color:var(--ink); font-family:"DM Sans",Arial,sans-serif; }
     a { color:inherit; }
     .hero { min-height:min(56vw,720px); height:56vw; max-height:720px; position:relative; overflow:hidden; display:grid; place-items:center; background:#d58eae; }
-    .hero-art { position:absolute; inset:-3%; width:106%; height:106%; object-fit:cover; filter:saturate(1.18); }
-    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(115deg,rgba(78,28,71,.12),rgba(227,67,134,.13)); }
+    .hero-art { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
     .nav { position:absolute; z-index:2; top:0; right:0; left:0; display:flex; align-items:center; justify-content:flex-end; gap:clamp(18px,4vw,60px); padding:20px 3.2%; color:white; font-size:13px; }
     .nav a { text-decoration:none; text-shadow:0 1px 8px #714b70; }
     .brand { position:absolute; left:3.2%; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
-    .hero-title { position:relative; z-index:1; margin:0; color:#fff0ff; font-size:clamp(90px,28vw,390px); font-weight:600; line-height:.68; letter-spacing:-.105em; transform:rotate(-4deg) scaleX(.9); text-shadow:0 5px 30px #bd3c9670; }
     .pill { display:inline-flex; align-items:center; gap:12px; padding:9px 17px; border-radius:999px; background:#f5f4f1; color:#3f3477; text-decoration:none; font-size:12px; font-weight:600; box-shadow:0 3px 14px #311d4b20; transition:transform .2s ease,background .2s ease; }
     .pill:hover { transform:translateY(-2px); background:white; }
     .hero .pill { position:absolute; z-index:2; bottom:9%; left:50%; transform:translateX(-50%); }
@@ -51,6 +49,12 @@
     .artist-copy { padding:clamp(34px,7vw,100px); display:flex; flex-direction:column; justify-content:center; line-height:1.6; font-size:clamp(15px,1.45vw,19px); }
     .artist-copy p { max-width:580px; margin:0 0 16px; }
     .artist-copy a { text-decoration-thickness:1px; text-underline-offset:3px; }
+    .video-section { padding:clamp(46px,8vw,110px) clamp(20px,8vw,120px); text-align:center; }
+    .video-section:nth-of-type(even) { background:#eeedf1; }
+    .video-heading { margin:0 0 12px; color:#7973a1; font-size:clamp(21px,3vw,34px); font-weight:500; }
+    .video-intro { margin:0 auto 28px; color:#77766f; font-size:14px; }
+    .video-frame { width:min(100%,1000px); margin:0 auto; aspect-ratio:16/9; overflow:hidden; border-radius:18px; background:#e8e5e9; box-shadow:0 12px 40px #393b3218; }
+    .video-frame iframe { display:block; width:100%; height:100%; border:0; }
     footer { min-height:230px; background:#393b32; color:#f0edf0; text-align:center; display:flex; justify-content:center; align-items:center; }
     .contact h2 { margin:0 0 28px; font-size:12px; font-weight:500; letter-spacing:.04em; }
     .contact p { margin:4px; font-size:13px; }
@@ -59,7 +63,6 @@
       .hero { height:86vw; min-height:390px; }
       .nav { gap:14px; padding:17px 14px; font-size:11px; }
       .brand { display:none; }
-      .hero-title { font-size:32vw; }
       .products { grid-template-columns:1fr; }
       .product-photo { min-height:82vw; }
       .product-feature { min-height:390px; }
@@ -80,12 +83,11 @@
 </head>
 <body>
   <header class="hero" id="top">
-    <img class="hero-art" src="images/280123_rururugs0275%202.png" alt="Colorful tufted wool forms in an interior">
+    <img class="hero-art" src="images/Rectangle%209.png" alt="Colorful abstract artwork">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#top">Meander</a>
       <a href="#shop">shop</a><a href="#about">about</a><a href="#bio">bio</a><a href="#contact">contact</a><a href="#faq">FAQ</a>
     </nav>
-    <h1 class="hero-title">MEANDER</h1>
     <a class="pill" href="#shop">shop now <span aria-hidden="true">→</span></a>
   </header>
 
@@ -126,6 +128,22 @@
         <p>You may know me from my earlier project <a href="https://www.instagram.com/siupstudio/">@siupstudio</a></p>
         <p>I started my tufting journey about a year ago and I immediately fell in love with the technique.</p>
         <p>blabla bla kicia kicia</p>
+      </div>
+    </section>
+
+    <section class="video-section" aria-labelledby="video-one-title">
+      <h2 class="video-heading" id="video-one-title">Moving image</h2>
+      <p class="video-intro">A film from the Meander collection.</p>
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/Fem-cIuNMwY" title="Meander video on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="video-section" aria-labelledby="video-two-title">
+      <h2 class="video-heading" id="video-two-title">Studio film</h2>
+      <p class="video-intro">A closer look at the process and the work.</p>
+      <div class="video-frame">
+        <iframe src="https://drive.google.com/file/d/1_4AiI3BD3RdItzgU_ddGaTnauUqwsjOY/preview" title="Meander studio video on Google Drive" loading="lazy" allow="autoplay" allowfullscreen></iframe>
       </div>
     </section>
   </main>
